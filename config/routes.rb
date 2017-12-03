@@ -1,4 +1,5 @@
 OriginApp::Application.routes.draw do
+
   root  'static_pages#home'
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/mypage',   to: 'static_pages#mypage',   via: 'get'
