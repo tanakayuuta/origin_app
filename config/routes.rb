@@ -1,5 +1,8 @@
 OriginApp::Application.routes.draw do
 
+  resources :users, only: [:show]
+  
+  get "users/show"
   root  'static_pages#home'
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/mypage',   to: 'static_pages#mypage',   via: 'get'
