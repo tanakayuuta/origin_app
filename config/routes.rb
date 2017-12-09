@@ -1,9 +1,12 @@
 OriginApp::Application.routes.draw do
 
+  devise_for :users, :controllers => {
+    :registrations => "registrations"
+  }
   resources :users, only: [:show]
+  root  'static_pages#home'
   
   get "users/show"
-  root  'static_pages#home'
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/mypage',   to: 'static_pages#mypage',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
