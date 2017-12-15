@@ -46,6 +46,7 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  font-family: "07ラノベPOP",sans-serif;
 }
 
 h2 {
@@ -55,6 +56,7 @@ h2 {
   text-align: center;
   font-weight: normal;
   color: $gray-light;
+  font-family: "07ラノベPOP",sans-serif;
 }
 
 p {
@@ -68,13 +70,13 @@ p {
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
+  font-size: 2em;
   color: white;
-  text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 12px;
   font-weight: bold;
   line-height: 1;
+  font-family: "ＭＳ ゴシック",sans-serif;
   &:hover {
     color: white;
     text-decoration: none;
