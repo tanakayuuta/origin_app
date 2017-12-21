@@ -1,8 +1,9 @@
+<%# 管理者でログインするとユーザー一覧からユーザーを消せる%>
 <li>
-  <%= gravatar_for user, size: 52 %>
+  <%= gravatar_for user, size: 80 %><%# ユーザーのサムネサイズ%>
   <%= link_to user.name, user %>
   <% if current_user.admin? && !(current_user == user) %>
-    | <%= link_to "delete", user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
+    | <%= link_to "このユーザーを削除する", user, method: :delete,
+                                  data: { confirm: "こいつ消しちゃいますか？" } %>
   <% end %>
 </li>

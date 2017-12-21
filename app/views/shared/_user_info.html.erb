@@ -1,11 +1,13 @@
-<a href="<%= user_path(current_user) %>">
-  <%= gravatar_for current_user, size: 52 %>
+<%#　ログイン後homeのログインユーザーに関するviewを担当（左上）%>
+
+<a href="<%= user_path(current_user) %>">　<%#　ログインユーザーのプロフィールへ遷移%>
+  <%= gravatar_for current_user, size: 60 %>　<%#　ログインユーザーのサムネサイズ%>
 </a>
 <h1>
-  <%= current_user.name %>
+  <%= link_to current_user.name, current_user %><%# ツイート投稿者のプロフィールへ遷移 %>
 </h1>
 <span>
-  <%= link_to "view my profile", current_user %>
+  <%= link_to "プロフィールページへ", current_user %>
 </span>
 <span>
   <%= pluralize(current_user.microposts.count, "micropost") %>

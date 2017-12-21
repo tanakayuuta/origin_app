@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, :except=>[:show]
-  before_action :admin_user,     only: :destroy
+  before_action :admin_user,     only: :destroy  #管理者だけユーザー削除が出来る
 
   def index
     @users = User.paginate(page: params[:page])
@@ -13,9 +13,9 @@ class UsersController < ApplicationController
   end
   
   
-  def destroy
+  def destroy #ユーザー削除に関するコントローラー
     User.find(params[:id]).destroy
-    flash[:success] = "User destroyed."
+    flash[:success] = "ユーザー消しちゃいました！" 
     redirect_to users_url
   end
   

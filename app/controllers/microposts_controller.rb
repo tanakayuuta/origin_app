@@ -1,11 +1,13 @@
+#micropostに関するコントローラー
+
 class MicropostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :correct_user,   only: :destroy
+  before_action :correct_user,   only: :destroy#ログインユーザーだけが自分のツイートを削除できる
 
   def create
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
-      flash[:success] = "Micropost created!"
+      flash[:success] = "ツイートを投稿しました！"
       redirect_to root_url
     else
       @feed_items = []

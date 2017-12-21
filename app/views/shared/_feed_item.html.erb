@@ -1,17 +1,17 @@
-<%# homeの投稿フィードを担当 %>
+<%# homeのツイート履歴のviewを担当 %>
 
 <li id="<%= feed_item.id %>">
   <%= link_to gravatar_for(feed_item.user), feed_item.user %>
     <span class="user">
-      <%= link_to feed_item.user.name, feed_item.user %>
+      <%= link_to feed_item.user.name, feed_item.user %><%# ツイート投稿者のプロフィールへ遷移 %>
     </span>
+    
     <span class="content"><%= feed_item.content %></span>
     
-    
-    
     <span class="timestamp">
-      Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+     <%= time_ago_in_words(feed_item.created_at) %>前に投稿
     </span>
+    
   <% if current_user == feed_item.user %>
     <%= link_to "削除", feed_item, method: :delete,
                                      data: { confirm: "消しちゃって大丈夫ですか？" },

@@ -1,7 +1,10 @@
-<%= form_for(@micropost) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
+<%#　ログイン後のツイート投稿フォームのviewを担当%>
+
+<%= form_for(@micropost) do |f| %> <%#form_forはフォームを宣言するメソッド%>
+  <%= render 'shared/error_messages', object: f.object %> <%#renderはよく使う部分や何度も使いたい部分を呼び出して利用するメソッド%>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+    <%= f.text_area :content, placeholder: "ツイートを書き込んでね" %>
+    <%#placeholderでダミーテキストを配置できる%>
   </div>
-  <%= f.submit "Post", class: "btn btn-lg btn-primary" %>
+  <%= f.submit "投稿する", class: "btn btn-lg btn-primary" %><%#submit=提出。投稿用のボタンを設置。"btn btn-primary"はBootstrap3のバリエーションの一つ%>
 <% end %>
