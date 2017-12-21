@@ -1,5 +1,7 @@
 OriginApp::Application.routes.draw do
 
+  resources :imageposts
+
   devise_for :users, :controllers => {
     :registrations => "registrations"
   }

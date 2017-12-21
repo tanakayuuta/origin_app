@@ -1,11 +1,13 @@
+<%# 自分のプロフィール画面のviewを担当(投稿専門)%>
 <li>
-  <span class="content"><%= micropost.content %></span>
+  <span class="content"><%= micropost.content %></span><%# spanは範囲を示すタグ。divと似てるけど改行されない%>
   <span class="timestamp">
-    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+     <%= time_ago_in_words(micropost.created_at) %> 前に投稿
   </span>
+  <br>
   <% if current_user == micropost.user %>
-    <%= link_to "delete", micropost, method: :delete,
-                                     data: { confirm: "You sure?" },
+    <%= link_to "削除", micropost, method: :delete,
+                                     data: { confirm: "消しちゃって大丈夫ですか?" },
                                      title: micropost.content %>
   <% end %>
 </li>

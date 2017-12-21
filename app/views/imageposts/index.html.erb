@@ -1,0 +1,29 @@
+<h1>Listing imageposts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Comment</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @imageposts.each do |imagepost| %>
+      <tr>
+        <td><%= imagepost.name %></td>
+        <td><%= imagepost.comment %></td>
+        <td><%= link_to 'Show', imagepost %></td>
+        <td><%= link_to 'Edit', edit_imagepost_path(imagepost) %></td>
+        <td><%= link_to 'Destroy', imagepost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Imagepost', new_imagepost_path %>
