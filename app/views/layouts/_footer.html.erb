@@ -4,7 +4,10 @@
   </small>
   <nav>
     <ul>
+    <% if signed_in? %> <%#ログイン済みの場合以下を表示する（ここから）%>
       <li><%= link_to "マイページ",   mypage_path %></li>
+    <% end %>
+    
       <li><%= link_to "お問い合わせ", contact_path %></li>
       <li><a href="http://news.railstutorial.org/">お知らせ</a></li>
     </ul>

@@ -211,6 +211,9 @@ input {
 .content {
   display: block;
 }
+.image img {
+  max-width :100%;
+}
 .timestamp {
   color: $gray-light;
 }

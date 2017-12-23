@@ -6,19 +6,19 @@
       <%= link_to feed_item.user.name, feed_item.user %><%# ツイート投稿者のプロフィールへ遷移 %>
     </span>
     
-    <span class="content"><%= feed_item.content %></span>
+    <span class="content"><%= feed_item.content %></span><%#投稿ツイート%>
     
-    <% if feed_item.image? %>
+    <% if feed_item.image? %><%#投稿画像%>
     <div class="image">
-      <%= image_tag feed_item.image, :size => '320x180' %>
+      <%= image_tag feed_item.image %>
     </div>
     <% end %>
     
-    <span class="timestamp">
+    <span class="timestamp"><%#タイムスタンプ%>
      <%= time_ago_in_words(feed_item.created_at) %>前に投稿
     </span>
     
-  <% if current_user == feed_item.user %>
+  <% if current_user == feed_item.user %><%#削除ボタン%>
     <%= link_to "削除", feed_item, method: :delete,
                                      data: { confirm: "消しちゃって大丈夫ですか？" },
                                      title: feed_item.content %>

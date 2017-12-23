@@ -1,22 +1,5 @@
 <%#トップページのviewを担当%>
 
-<% if signed_in? %> <%#ログイン済みの場合以下を表示する（ここから）%>
-  <div class="row">
-    <aside class="col-md-4"><%# asideは本文から外れた部分を意味する%>
-      <section>
-        <%= render 'shared/user_info' %><%#renderはよく使う部分や何度も使いたい部分を呼び出して利用するメソッド%>
-      </section>
-      <section>
-        <%= render 'shared/micropost_form' %>
-      </section>
-    </aside>
-     <div class="col-md-8">
-      <h3>投稿履歴</h3>
-      <%= render 'shared/feed' %>
-    </div>
-  </div>
-<% else %>　<%#ログイン済みの場合以下を表示する（ここまで）%>
-
 
 
 <%#ログインしていない場合以下を表示する（ここから）%>
@@ -45,9 +28,8 @@
   
 <br>
 <br>
-
+<% if signed_in? %> <%#ログイン済みの場合以下を表示する（ここから）%>
+<% else %>
   <%= link_to "新規登録はこちら", new_user_registration_path, class: "btn btn-lg btn-primary" %>
+<% end %>　<%#ログイン済みの場合以下を表示する（ここまで）%>
 </div>
-
-
-<% end %><%#ログインしていない場合以下を表示する（ここまで）%>
