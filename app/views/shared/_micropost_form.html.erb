@@ -6,5 +6,11 @@
     <%= f.text_area :content, placeholder: "ツイートを書き込んでね" %>
     <%#placeholderでダミーテキストを配置できる%>
   </div>
+  
+  <div class="image">
+    <%= f.label :"画像ファイル" %><br>
+    <%= f.file_field :image %><%#投稿フォームで画像ファイルを選択できる%>
+  </div>
+  
   <%= f.submit "投稿する", class: "btn btn-lg btn-primary" %><%#submit=提出。投稿用のボタンを設置。"btn btn-primary"はBootstrap3のバリエーションの一つ%>
 <% end %>

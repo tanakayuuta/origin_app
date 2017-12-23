@@ -1,6 +1,11 @@
-<%# 自分のプロフィール画面のviewを担当(投稿専門)%>
+<%# 自分のプロフィール画面の投稿履歴viewを担当%>
 <li>
   <span class="content"><%= micropost.content %></span><%# spanは範囲を示すタグ。divと似てるけど改行されない%>
+  
+  <%#div class="image">
+    <%= image_tag micropost.image.url(:thumb) %>
+  <%#/div>%>
+  
   <span class="timestamp">
      <%= time_ago_in_words(micropost.created_at) %> 前に投稿
   </span>

@@ -8,6 +8,12 @@
     
     <span class="content"><%= feed_item.content %></span>
     
+    <% if feed_item.image? %>
+    <div class="image">
+      <%= image_tag feed_item.image, :size => '320x180' %>
+    </div>
+    <% end %>
+    
     <span class="timestamp">
      <%= time_ago_in_words(feed_item.created_at) %>前に投稿
     </span>
