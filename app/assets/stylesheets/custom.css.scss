@@ -20,6 +20,7 @@ body {
   padding-top: 60px;
 }
 
+
 section {
   overflow: auto;
 }
@@ -39,6 +40,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
+  font-family: "07ラノベPOP",sans-serif;
 }
 
 h1 {
@@ -226,4 +228,21 @@ aside {
     height: 100px;
     margin-bottom: 5px;
   }
+}
+
+
+.box {
+ display:flex;
+ text-align: center;
+ flex-wrap:wrap;
+ 
+	}
+	
+.item{
+  padding: 0.5em 1em;
+    margin: 10px 0px;
+    color: #444444;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 }

@@ -1,7 +1,4 @@
 <%#トップページのviewを担当%>
-
-
-
 <%#ログインしていない場合以下を表示する（ここから）%>
 <div class="center jumbotron">
   <h1>あつまて(仮)</h1>
@@ -9,27 +6,32 @@
   <h2>
     フリー素材投稿サイトになる（予定）
   </h2>
-  
-  
-<div class="input-group">
-  <span class="input-group-btn">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-    キーワード
-  <span class="caret"></span>
-  </button>
-	  	<ul class="dropdown-menu" role="menu">
-		  	<li><a href="#">キーワード</a></li>
-			  <li><a href="#">タグ</a></li>
-			  <li><a href="#">ユーザー</a></li>
-	  	</ul>
-     </span>
-	<input type="text" class="form-control" placeholder="キーワードを入力して検索">
-</div>
-  
-<br>
 <br>
 <% if signed_in? %> <%#ログイン済みの場合以下を表示する（ここから）%>
 <% else %>
   <%= link_to "新規登録はこちら", new_user_registration_path, class: "btn btn-lg btn-primary" %>
-<% end %>　<%#ログイン済みの場合以下を表示する（ここまで）%>
+<% end %>
 </div>
+
+
+<h3>新着画像一覧</h3>
+<br>
+  <div class="box">
+    <% @microposts.each do |micropost| %>
+      <% if micropost.image? %><%#micropost.imageの場合のみ表示%>
+        
+        <div class="item">
+        <li>
+        投稿者: <%= @users.find(micropost.user_id).name  %><br>
+        <%= image_tag micropost.image,  :width => "350px", :height => "auto" %><br>
+        <% if signed_in? %><%#ログイン状態でのみダウンロードボタンを表示%>
+        <%= link_to "素材をダウンロード", new_user_registration_path, class: "btn btn-lg btn-primary" %>
+        <% else %>
+        <% end %>
+        </il>
+        </div>
+      <% else %>
+      <% end %>
+    <% end %>
+</div>
+ 
