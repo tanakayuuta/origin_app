@@ -233,8 +233,8 @@ aside {
 
 .box {
  display:flex;
- text-align: center;
- flex-wrap:wrap;
+ text-align: center; /*box内のオブジェクトを中央揃えにする*/
+ flex-wrap:wrap;/*折り返し表示*/
  
 	}
 	
@@ -245,4 +245,11 @@ aside {
     background: white;
     border-top: solid 5px #5d627b;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+.item li {
+    width: 350px; /* itemの中のliの幅を決める*/
+}
+.item li img {
+    max-height: 200px; /* liに出力する画像の最高値を決める*/
 }

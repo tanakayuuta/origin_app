@@ -23,7 +23,7 @@
         <div class="item">
         <li>
         投稿者: <%= @users.find(micropost.user_id).name  %><br>
-        <%= image_tag micropost.image,  :width => "350px", :height => "auto" %><br>
+        <%= image_tag micropost.image %><br>
         <% if signed_in? %><%#ログイン状態でのみダウンロードボタンを表示%>
         <%= link_to "素材をダウンロード", new_user_registration_path, class: "btn btn-lg btn-primary" %>
         <% else %>
