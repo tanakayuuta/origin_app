@@ -17,7 +17,7 @@ class MicropostsController < ApplicationController
 
   def destroy
     @micropost.destroy
-    redirect_to root_url
+    redirect_to mypage_url#投稿削除後にマイページに
   end
 
   private
@@ -31,9 +31,4 @@ class MicropostsController < ApplicationController
       redirect_to root_url if @micropost.nil?
     end
 
-  private
-
-    def micropost_params
-      params.require(:micropost).permit(:content, :image) 
-    end
 end
